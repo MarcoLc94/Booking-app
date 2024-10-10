@@ -1,19 +1,32 @@
-import React from 'react'
 
-const Stars = ({ rating}) => {
-const fullStar = Math.floor(rating)
-const halfStar = !!(rating % 1)
+
+const Stars = ({ hotel }) => {
+  console.log(hotel)
+const fullStar = Math.floor(hotel.rating)
+const halfStar = !!(hotel.rating % 1)
 const emptyStar = 5 - fullStar - (halfStar ? 1 : 0)
+
     
   return (
     <div>
-      {Array(fullStar).fill(<box-icon type="solid" name="star"></box-icon>)}
-      
+      {/* Renderizar estrellas llenas */}
+      {Array(fullStar)
+        .fill()
+        .map((_, index) => (
+          <box-icon key={`full-${index}`} type="solid" name="star"></box-icon>
+        ))}
+
       {/* Renderizar media estrella si es necesario */}
-      {halfStar && <box-icon type="solid" name="star-half"></box-icon>}
+      {halfStar && (
+        <box-icon key="half-star" type="solid" name="star-half"></box-icon>
+      )}
 
       {/* Renderizar estrellas vacías */}
-      {Array(emptyStar).fill(<box-icon name="star"></box-icon>)}
+      {Array(emptyStar)
+        .fill()
+        .map((_, index) => (
+          <box-icon key={`empty-${index}`} name="star"></box-icon>
+        ))}
     </div>
   )
 }
