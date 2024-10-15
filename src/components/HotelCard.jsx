@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 export const HotelCard = ({ hotel }) => {
   const navigate = useNavigate()
 
+  console.log(hotel)
+
   const handleDetail = () => {
     navigate(`/hotel/${hotel.id}`)
   }

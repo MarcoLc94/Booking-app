@@ -1,0 +1,38 @@
+.detailed {
+    margin: 10vh;
+
+    h1 {
+        margin: 10px;
+    }
+
+    .hotel-info {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+     
+        h2{
+            font-size: 18px;
+        }
+    }
+
+    .img-detailed {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        margin: 10px;
+    }
+
+    .detailed-city {
+        margin: 10px;
+        
+    }
+
+    .detailed-address {
+        display: flex;
+    }
+
+    p{
+        margin: 10px;
+        text-align: justify;
+    }
+}
