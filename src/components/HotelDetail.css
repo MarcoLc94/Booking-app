@@ -1,5 +1,5 @@
 .detailed {
-    margin: 10vh;
+    margin: 6vh;
 
     h1 {
         margin: 10px;
@@ -17,9 +17,16 @@
 
     .img-detailed {
         display: flex;
-        justify-content: space-between;
         gap: 20px;
         margin: 10px;
+
+        img {
+            width: 30vw;
+        }
+
+        .map {
+            width: 100%;
+        }
     }
 
     .detailed-city {
@@ -34,5 +41,19 @@
     p{
         margin: 10px;
         text-align: justify;
+    }
+}
+
+@media(width < 600px) {
+    .detailed{
+
+        .img-detailed{
+            flex-direction: column;
+
+            .map{
+                width: 100%;
+            }
+        }
+
     }
 }

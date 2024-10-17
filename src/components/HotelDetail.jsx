@@ -28,7 +28,7 @@ export const HotelDetail = () => {
         </div>
         <div className="img-detailed">
           <img src={hotel?.images[0].url} alt={hotel?.name} width={400} />
-          {hotel && <HotelMap lat={hotel?.lat} lon={hotel?.lon} />}
+          {hotel && <HotelMap lat={hotel?.lat} lon={hotel?.lon} className="map"/>}
         </div>
         <div className="detailed-city">
           {hotel?.city.name}, {hotel?.city.country}

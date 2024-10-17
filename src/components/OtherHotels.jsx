@@ -13,7 +13,7 @@ const OtherHotels = ( {city, id }) => {
      if(city){
          getHotelByCity(url)
      }
-    }, [])
+    }, [city])
     
     useEffect(() => {
     console.log(hotelsByCity) // Se ejecutará cuando 'products' cambie
@@ -21,11 +21,11 @@ const OtherHotels = ( {city, id }) => {
 
   return (
     <div>
-        <h2 className="title-other">Other hotels in {city?.country}</h2>
+        <h2 className="title-other">Other hotels in {city?.name}</h2>
         <div className="other-container">
           {
             hotelsByCity?.filter((hotel) => hotel.id !== id).map((hotel) => (
-              <HotelCard key={hotel?.id} hotel={hotel}/>
+              hotel ? <HotelCard key={hotel?.id} hotel={hotel}/> : <h2 key={hotel?.id}>Not found</h2>
             ))
           }
         </div>

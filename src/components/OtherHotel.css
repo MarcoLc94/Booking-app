@@ -6,3 +6,9 @@
 .other-container {
     display: flex;
 }
+
+@media(width < 600px ){
+    .other-container{
+        flex-direction: column;
+    }
+}

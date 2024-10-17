@@ -3,3 +3,9 @@
     justify-content: space-around;
     width: 100%;
 }
+
+@media(width < 600px) {
+    .cardsgroup {
+        flex-direction: column;
+    }
+}
