@@ -6,6 +6,9 @@
     width: 100%;
     background-color: pink;
     color: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 2;
+    top: 0;
 
     .nav-inside {
         display: flex;
@@ -13,5 +16,20 @@
         text-align: center;
         gap: 10px;
         padding: 10px;
+        position: relative;
+        top: .2em;
+        cursor: pointer;
+        @media(width > 600px){
+            flex-direction: row;
+        }
+        flex-direction: column;
+    }
+
+    .nav-close {
+        position: fixed;
+        background-color: brown;
+        top: 78px;
+        right: 0;
+        flex-direction: column;
     }
 }
