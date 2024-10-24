@@ -24,7 +24,7 @@ const Home = () => {
           <HotelCard key={hotel?.id} hotel={hotel} />
         ))
       ) : (
-        <p>Loading hotels...</p> // Mensaje de carga mientras no haya productos
+        <div className="loader"></div> // Mensaje de carga mientras no haya productos
       )
     }</div>
   )

@@ -18,7 +18,8 @@ const NavBar = ({logOut, setLogOut}) => {
    const handleLogOut = () => {
     setIsOpen(false)
     setLogOut(null)
-    localStorage.clear()
+    localStorage.removeItem("token")
+    localStorage.removeItem("userLogged")
    }
 
   return (

@@ -1,13 +1,53 @@
 .cardsgroup {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 6vh;
+  align-items: center;
+  height: 70vh;
+
+  .loader {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    position: relative;
+  }
+
+  .loader::before,
+  .loader::after {
+    content: "";
+    display: block;
     width: 100%;
-    margin-top: 6vh;
-    
+    height: 100%;
+    border-radius: 50%;
+    border: 8px solid rgb(190, 0, 32);
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: spin 1.2s linear infinite;
+  }
+
+  .loader::after {
+    border-color: transparent;
+    border-top-color: rgb(253, 177, 177);
+    animation-delay: -0.6s;
+  }
+
 }
 
-@media(width < 600px) {
-    .cardsgroup {
-        flex-direction: column;
-    }
+@keyframes spin {
+  0% {
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    transform: scale(1) rotate(180deg);
+  }
+  100% {
+    transform: scale(0) rotate(360deg);
+  }
+}
+@media (width < 600px) {
+  .cardsgroup {
+    flex-direction: column;
+  }
 }

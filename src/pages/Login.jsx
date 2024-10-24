@@ -29,12 +29,12 @@ const Login = ({setLogOut, logOut}) => {
       setLogOut(parsedUser)
       console.log(logOut)
     }
-  }, [])
+  }, [submit])
 
   return (
     <section className="login-info">
     {
-      logOut ? <div className="name-vs"><Grettings userLogged={logOut}/></div> :
+      logOut ? <div className="name-vs"><Grettings logOut={logOut} setLogOut={setLogOut}/></div> :
     <div className="form-container">
       <form onSubmit={handleSubmit(submit)} className="form-data">
       <box-icon type='solid' name='user-circle' className="icon-user"></box-icon>
