@@ -1,18 +1,18 @@
 import { useForm } from "react-hook-form";
 import useAuth from "../hooks/useAuth";
 import "./Login.css";
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import Grettings from "../components/Grettings";
 
-const Login = () => {
+const Login = ({setLogOut, logOut}) => {
   const { handleSubmit, reset, register } = useForm();
   const { loginUser } = useAuth();
-  const [userLogged, setUserLogged] = useState("")
   const navigate = useNavigate()
 
 
   const submit = (data) => {
+    console.log(data)
     loginUser(data);
     reset({
       email: "",
@@ -23,17 +23,18 @@ const Login = () => {
 
   useEffect(() => {
     const userLocalStorage = localStorage.getItem("userLogged")
+    console.log(userLocalStorage)
     if(userLocalStorage){
       const parsedUser = JSON.parse(userLocalStorage)
-      setUserLogged(parsedUser)
+      setLogOut(parsedUser)
+      console.log(logOut)
     }
-    console.log(userLogged)
   }, [])
 
   return (
-    <section>
+    <section className="login-info">
     {
-      userLogged ? <div className="name-vs"><Grettings userLogged={userLogged}/></div> :
+      logOut ? <div className="name-vs"><Grettings userLogged={logOut}/></div> :
     <div className="form-container">
       <form onSubmit={handleSubmit(submit)} className="form-data">
       <box-icon type='solid' name='user-circle' className="icon-user"></box-icon>

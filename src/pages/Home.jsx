@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <div className="cardsgroup">{
       products?.length ? (
-        products.map((hotel) => (
+        products?.map((hotel) => (
           <HotelCard key={hotel?.id} hotel={hotel} />
         ))
       ) : (
