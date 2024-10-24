@@ -20,7 +20,7 @@ const NavBar = () => {
       <h1>
         <Link to="/">Booking App</Link>
       </h1>
-      <div>
+      <div className="burguer-icon">
         <box-icon name="menu" onClick={handleBurguer}></box-icon>
       </div>
       <nav className={`nav-login ${isOpen || "nav-close"}`}>
