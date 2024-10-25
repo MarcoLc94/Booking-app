@@ -23,7 +23,6 @@ const Login = ({setLogOut, logOut}) => {
 
   useEffect(() => {
     const userLocalStorage = localStorage.getItem("userLogged")
-    console.log(userLocalStorage)
     if(userLocalStorage){
       const parsedUser = JSON.parse(userLocalStorage)
       setLogOut(parsedUser)

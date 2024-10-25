@@ -33,7 +33,7 @@ const NavBar = ({logOut, setLogOut}) => {
       <nav className={`nav-login ${isOpen || "nav-close"}`}>
         <ul className="nav-inside">
           <li onClick={closeMenu}>
-            <Link to="/">My Reservation</Link>
+            <Link to="/reservations">My Reservation</Link>
           </li>
           <li onClick={closeMenu}>
             <Link to="/register">Register</Link>

@@ -5,6 +5,7 @@ import Stars from "../shared/Stars";
 import OtherHotels from "./OtherHotels";
 import HotelMap from "../components/HotelMap";
 import "../components/HotelDetail.css";
+import FormReservations from "./FormReservations";
 
 export const HotelDetail = () => {
   const { id } = useParams();
@@ -23,7 +24,7 @@ export const HotelDetail = () => {
       <div>
         <h1>{hotel?.name}</h1>
         <div className="hotel-info">
-          {hotel ? <Stars hotel={hotel} /> : <div>Loading...</div>}
+          {hotel ? <Stars hotel={hotel} /> : <div className="loader"></div>}
           <h2>{hotel?.rating}</h2>
         </div>
         <div className="img-detailed">
@@ -34,10 +35,15 @@ export const HotelDetail = () => {
           {hotel?.city.name}, {hotel?.city.country}
         </div>
         <div className="detailed-address">
-          <box-icon name="map"></box-icon>
+          {
+            hotel ? 
+            (<box-icon name="map"></box-icon>) : null 
+
+          }
           <address>{hotel?.address}</address>
         </div>
         <p>{hotel?.description}</p>
+        <FormReservations hotelId={hotel?.id}/>
         <OtherHotels city={hotel?.city} id={hotel?.id} />
       </div>
     </div>

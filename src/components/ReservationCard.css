@@ -1,0 +1,10 @@
+.reservation-detail {
+    display: flex;
+    padding: 10px;
+}
+
+@media(width < 600px ) {
+    .reservation-detail {
+        flex-direction: column;
+    }
+}

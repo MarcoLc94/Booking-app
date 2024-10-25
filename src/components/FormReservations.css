@@ -1,0 +1,40 @@
+.form-date {
+    display: flex;
+    margin: 10px;
+    flex-direction: column;
+
+    .form-inside {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500 ;
+        
+        input {
+            border: 1px solid black;
+            margin: 10px;
+        }
+
+        button {
+            margin: 10px;
+            background-color: rgb(190, 0, 32);
+            padding: 5px 15px 5px 15px;
+            color: aliceblue;
+            transition: 0.2s ease;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            background-color: rgb(228, 1, 39);
+            transition: 0.2s ease;
+        }
+
+        button:active {
+            transform: scale(1);
+        }
+    }
+
+}
