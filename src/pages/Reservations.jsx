@@ -19,10 +19,10 @@ const Reservations = () => {
         <div className="reservation">
             <h1 className="title-op">Reservations</h1>
             <div>
-             {
+            {   reservations.length ? (
                 Array.isArray(reservations) && reservations?.map((hotel) => (
                      <ReservationCard key={hotel?.id} hotel={hotel} deleteReservation={deleteReservation}/>
-                ))
+                ))) : (<div className="erro-message"><img src="/cute-cat-illustration-free-removebg-preview.png" alt="" width={"200px"} /><p>Ups.. you dont have any reservation.</p></div>)
             }
             </div>
         </div>
