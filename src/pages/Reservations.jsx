@@ -17,7 +17,7 @@ const Reservations = () => {
   return (
     <div>
         <div className="reservation">
-            <h1>Reservations</h1>
+            <h1 className="title-op">Reservations</h1>
             <div>
              {
                 Array.isArray(reservations) && reservations?.map((hotel) => (
