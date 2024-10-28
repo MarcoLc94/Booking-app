@@ -11,7 +11,7 @@ const Home = () => {
   useEffect(() => {
     const url = 'https://hotels-api.academlo.tech/hotels'
     dispatch(setProductsThunk(url))
-  }, [dispatch])
+  }, [])
 
   useEffect(() => {
     console.log(products) // Se ejecutará cuando 'products' cambie

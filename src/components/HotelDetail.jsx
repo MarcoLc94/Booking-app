@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import { useEffect } from "react";
 import Stars from "../shared/Stars";
@@ -6,6 +6,7 @@ import OtherHotels from "./OtherHotels";
 import HotelMap from "../components/HotelMap";
 import "../components/HotelDetail.css";
 import FormReservations from "./FormReservations";
+import Reviews from "./Reviews";
 
 export const HotelDetail = () => {
   const { id } = useParams();
@@ -43,7 +44,11 @@ export const HotelDetail = () => {
           <address>{hotel?.address}</address>
         </div>
         <p>{hotel?.description}</p>
-        <FormReservations hotelId={hotel?.id}/>
+        {
+        localStorage.getItem("token") ? (<FormReservations hotelId={hotel?.id}/>) :
+        (<div><p>Por favor Logueate para poder reservar <Link to={"/login"}>Log in</Link></p></div>)
+        }
+        <Reviews hotelId={hotel?.id}/>
         <OtherHotels city={hotel?.city} id={hotel?.id} />
       </div>
     </div>

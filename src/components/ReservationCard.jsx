@@ -1,6 +1,6 @@
 import "./ReservationCard.css";
 
-const ReservationCard = ({ hotel, deleteReservation }) => {
+const ReservationCard = ({ hotel, deleteReservation, setBookSelected, setFormIsOpen }) => {
 
     const initialDate = new Date(hotel.checkIn).getTime()
     const finalDate = new Date(hotel.checkOut).getTime()
@@ -10,6 +10,11 @@ const ReservationCard = ({ hotel, deleteReservation }) => {
     const handleDelete = () => {
         const url = `https://hotels-api.academlo.tech/bookings/${hotel.id}`
         deleteReservation(url, hotel.id, true)
+    }
+
+    const handleModal = () => {
+      setFormIsOpen(true)
+      setBookSelected(hotel)
     }
 
   return (
@@ -23,7 +28,7 @@ const ReservationCard = ({ hotel, deleteReservation }) => {
           <p>{hotel?.hotel.city.name}</p>
           <p>, {hotel?.hotel.city.country}.</p>
         </div>
-        <a href="">Rate and comment this visit...</a>
+        <a onClick={handleModal}>Rate and comment this visit... Here!</a>
       </div>
       <div>
         <div className="hotel-days">
